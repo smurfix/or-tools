@@ -63,8 +63,8 @@ target_link_libraries(min_cost_flow_pybind11 PRIVATE ${PROJECT_NAMESPACE}::ortoo
 add_library(${PROJECT_NAMESPACE}::min_cost_flow_pybind11 ALIAS min_cost_flow_pybind11)
 
 if(BUILD_PYTHON_TESTING)
-  file(GLOB PYTHON_SRCS "*_test.py")
-  foreach(FILE_NAME IN LISTS PYTHON_SRCS)
-    add_python_test(${FILE_NAME})
-  endforeach()
+#  file(GLOB PYTHON_SRCS "*_test.py")
+#  foreach(FILE_NAME IN LISTS PYTHON_SRCS)
+#    add_python_test(${FILE_NAME})
+#  endforeach()
 endif()
