@@ -6,6 +6,7 @@ on:
     branches:
       - ci
       - main
+      - mizux/dev
   workflow_dispatch:
 
 concurrency:
