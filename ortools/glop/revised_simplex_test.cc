@@ -46,8 +46,6 @@
 #include "ortools/util/fp_utils.h"
 #include "ortools/util/time_limit.h"
 
-ABSL_DECLARE_FLAG(bool, simplex_stop_after_first_basis);
-
 namespace operations_research {
 namespace glop {
 namespace {
