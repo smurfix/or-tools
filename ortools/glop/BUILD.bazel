@@ -669,6 +669,7 @@ cc_library(
         ":preprocessor",
         ":revised_simplex",
         ":variables_info",
+        "//ortools/base:base_export",
         "//ortools/base:version",
         "//ortools/base/macros:os_support",
         "//ortools/linear_solver:linear_solver_cc_proto",

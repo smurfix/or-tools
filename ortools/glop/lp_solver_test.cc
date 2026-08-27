@@ -38,12 +38,6 @@
 #include "ortools/util/fp_utils.h"
 #include "ortools/util/time_limit.h"
 
-ABSL_DECLARE_FLAG(bool, lp_dump_to_proto_file);
-ABSL_DECLARE_FLAG(bool, lp_dump_compressed_file);
-ABSL_DECLARE_FLAG(bool, lp_dump_binary_file);
-ABSL_DECLARE_FLAG(std::string, lp_dump_dir);
-ABSL_DECLARE_FLAG(std::string, lp_dump_file_basename);
-
 namespace operations_research {
 namespace glop {
 namespace {
