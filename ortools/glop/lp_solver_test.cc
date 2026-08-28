@@ -776,6 +776,7 @@ TEST(LPSolverTest, WriteToProtoFile) {
   LinearProgram linear_program;
   ASSERT_TRUE(ParseLp(kLinearProgram, &linear_program));
 
+  const bool saved_flag = absl::GetFlag(FLAGS_lp_dump_to_proto_file);
   absl::SetFlag(&FLAGS_lp_dump_to_proto_file, true);
   absl::SetFlag(&FLAGS_lp_dump_dir, ::testing::TempDir());
   const std::string kName = "Test";
@@ -791,6 +792,7 @@ TEST(LPSolverTest, WriteToProtoFile) {
   MPModelProto disk_proto;
   ASSERT_OK(ReadFileToProto(kFileName, &disk_proto));
   EXPECT_THAT(memory_proto, EqualsProto(disk_proto));
+  absl::SetFlag(&FLAGS_lp_dump_to_proto_file, saved_flag);
 }
 
 TEST(LPSolverTest, TestObjectiveScaling) {

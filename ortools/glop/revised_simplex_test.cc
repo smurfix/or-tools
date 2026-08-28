@@ -716,12 +716,14 @@ TEST(RevisedSimplexTest, Chvatalp135_81aForCoverage2) {
   GlopParameters parameters;
   parameters.set_use_scaling(false);
   parameters.set_basis_refactorization_period(1);
+  const bool saved_flag = absl::GetFlag(FLAGS_simplex_stop_after_first_basis);
   absl::SetFlag(&FLAGS_simplex_stop_after_first_basis, true);
 
   const ProblemStatus kExpectedStatus = ProblemStatus::INIT;
   const Fractional kExpectedResult = 0;
 
   CheckChvatalp135_81a(kExpectedStatus, kExpectedResult, parameters);
+  absl::SetFlag(&FLAGS_simplex_stop_after_first_basis, saved_flag);
 }
 
 TEST(RevisedSimplexTest, NoConstraints) {
